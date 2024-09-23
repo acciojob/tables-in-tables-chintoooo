@@ -3,76 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tables in Tables</title>
+    <title>Nested Tables and Lists</title>
     <style>
         table {
-            width: 100%;
             border-collapse: collapse;
-            margin-bottom: 20px;
+            width: 100%;
+        }
+        table, th, td {
+            border: 1px solid black;
         }
         th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
+            padding: 10px;
             text-align: left;
         }
-        th {
-            background-color: #f2f2f2;
+        .black-cell {
+            background-color: black;
+            color: white;
         }
     </style>
 </head>
 <body>
-
-    <h1>Table 1</h1>
+    <h1>Main Table</h1>
     <table>
-        <tr>
-            <th>Main Header</th>
-            <th>Nested Table 2</th>
-        </tr>
-        <tr>
-            <td>Row 1, Column 1</td>
+       <tr>
+    <td>
+        <!-- Nested Table 1 -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Nested Table 2</th> <!-- Changed from 'Nested Table 1' to 'Nested Table 2' -->
+                    <th>Column 1</th>
+                    <th>Column 2</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Data 1</td>
+                    <td>Data 2</td>
+                    <td>Data 3</td>
+                </tr>
+            </tbody>
+        </table>
+    </td>
+</tr>
             <td>
                 <!-- Nested Table 2 -->
                 <table>
-                    <tr>
-                        <th>Header in Nested Table 2</th>
-                    </tr>
-                    <tr>
-                        <td>Row 1, Nested Table 2</td>
-                    </tr>
+                    <thead>
+                        <tr>
+                            <th>Nested Table 2</th>
+                            <th>Column 1</th>
+                            <th>Column 2</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Data 1</td>
+                            <td>Data 2</td>
+                            <td class="black-cell">HTML</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <!-- Nested Table 3 with a list -->
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nested Table 3</th>
+                            <th>Column 1</th>
+                            <th>Column 2</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Data 1</td>
+                            <td>
+                                <ul>
+                                    <li>List item 1</li>
+                                    <li>List item 2</li>
+                                    <li>List item 3</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <!-- Nested Table 4 -->
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nested Table 4</th>
+                            <th>Column 1</th>
+                            <th>Column 2</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Data 1</td>
+                            <td>Data 2</td>
+                        </tr>
+                    </tbody>
                 </table>
             </td>
         </tr>
     </table>
-
-    <h1>Table 2</h1>
-    <table>
-        <tr>
-            <th>Header Table 2</th>
-        </tr>
-        <tr>
-            <td>Row 1, Table 2</td>
-        </tr>
-    </table>
-
-    <h1>Table 3</h1>
-    <table>
-        <tr>
-            <th>Header Table 3</th>
-        </tr>
-        <tr>
-            <td>Row 1, Table 3</td>
-        </tr>
-    </table>
-
-    <h1>Table 4</h1>
-    <table>
-        <tr>
-            <th>Header Table 4</th>
-        </tr>
-        <tr>
-            <td>Row 1, Table 4</td>
-        </tr>
-    </table>
-
 </body>
 </html>
